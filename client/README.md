@@ -1,0 +1,2 @@
+# Reflections 
+This project was not as difficult as i imagined and i managed to meet the requirements. I did ecounter some bugs but i was able to debug them without much difficulty. The only challenging part was remembering all the instructions so i had to use the demo's and figma. 
