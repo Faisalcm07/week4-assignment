@@ -42,14 +42,24 @@ async function displayMovies() {
     const row = document.createElement('tr')
     const name = document.createElement('td')
     const favMovie = document.createElement('td')
+    const deleteCell = document.createElement('td')
+    const deleteButton = document.createElement('button')
+    deleteButton.id = item.id
 
     name.textContent = item.name
     favMovie.textContent = item.movie
+    deleteButton.textContent = `delete`
     
-
-    row.append(name, favMovie)
+    deleteCell.appendChild(deleteButton)
+    row.append(name, favMovie, deleteCell)
 
     table.appendChild(row)
   })
 }
 displayMovies()
+
+function deleteMovie (){ 
+  const deleteMovie = await fetch (`https://week4-assignment-wwvs.onrender.com/movies`,{ headers: {
+      "Content-Type" : "application/json"
+    },
+    method: "delete",}) }
