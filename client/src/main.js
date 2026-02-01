@@ -4,7 +4,7 @@ const form = document.getElementById('form')
 async function fetchData (){
 
     const data = await fetch (`https://week4-assignment-wwvs.onrender.com/movies`)
-    const favourite_movies = await data.json
+    const favourite_movies = await data.json ()
     console.log(favourite_movies)
 
     return favourite_movies
