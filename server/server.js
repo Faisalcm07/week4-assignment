@@ -23,6 +23,13 @@ app.get('/movies', async (request, response)=>{
     
     response.status(200).json(movies)})
 
+app.post('/movies', async (request, response)=>{
+
+    const userPost = request.body
+
+    const query = await db.query(`INSERT INTO favourite_movies (name, movie) VALUES ($1, $2)`[userPost.name, userPost.movie])
+})
+
 
 
 app.listen(3000, () => {
