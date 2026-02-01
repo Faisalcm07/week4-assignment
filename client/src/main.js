@@ -1,3 +1,5 @@
+import "./style.css"
+
 const display = document.getElementById('app')
 const form = document.getElementById('form')
 
@@ -34,17 +36,20 @@ form.addEventListener(`submit`,formSubmission)
 async function displayMovies() {
   const movies = await fetchData()
 
+   const table = document.querySelector("#app table")
+
   movies.forEach((item) => {
-    const div = document.createElement('div')
-    const name = document.createElement('p')
-    const favMovie = document.createElement('p')
+    const row = document.createElement('tr')
+    const name = document.createElement('td')
+    const favMovie = document.createElement('td')
 
     name.textContent = item.name
     favMovie.textContent = item.movie
+    
 
-    div.append(name, favMovie)
+    row.append(name, favMovie)
 
-    display.appendChild(div)
+    table.appendChild(row)
   })
 }
 displayMovies()
