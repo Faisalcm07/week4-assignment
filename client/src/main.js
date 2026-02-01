@@ -34,7 +34,7 @@ form.addEventListener(`submit`,formSubmission)
 async function displayMovies() {
   const movies = await fetchData()
 
-  movies.forEach((message) => {
+  movies.forEach((movie) => {
     const div = document.createElement('div')
     const name = document.createElement('p')
     const movie = document.createElement('p')
