@@ -27,10 +27,8 @@ app.post('/movies', async (request, response)=>{
 
     const userPost = request.body
 
-    const query = await db.query(`INSERT INTO favourite_movies (name, movie) VALUES ($1, $2)`[userPost.name, userPost.movie])
+    const query = await db.query(`INSERT INTO favourite_movies (name, movie) VALUES ($1, $2)`,[userPost.name, userPost.movie])
 })
-
-
 
 app.listen(3000, () => {
     console.log(`Server started on http://localhost:3000/`)
